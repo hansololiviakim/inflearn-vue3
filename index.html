@@ -1,0 +1,23 @@
+<!-- vue.js cdn -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+  {{ test }}
+</div>
+
+<script>
+  const { createApp } = Vue
+  
+  createApp({
+    data() {
+      return {
+        time: '6pm'
+      }
+    },
+    computed: {
+      test() {
+        return this.time === '6pm' ? 'evening' : 'morning'
+      }
+    }
+  }).mount('#app')
+</script>
