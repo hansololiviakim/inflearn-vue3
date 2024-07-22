@@ -1,0 +1,28 @@
+<div id="app">
+  <h1>Proxy를 사용해 Vue의 Reactivity 구현해보기</h1>
+  <p id="txt"></p>
+</div>
+
+<script>
+  const data = {
+    message: 'vue.js 공부하기'
+  }
+
+  const render = (sth) => {
+    const element = document.querySelector('#txt')
+    element.innerHTML = sth
+  }
+
+  const app = new Proxy(data, {
+    // 객체의 값에 접근할 때 출력될 내용
+    get() {
+      console.log('value access')
+    },
+    // 객체의 값을 변경할 때 출력될 내용
+    set(target, prop, newValue) {
+      console.log(`proxy set: ${JSON.stringify(target)}, ${prop}, ${newValue}`)
+      target[prop] = newValue
+      render(newValue)
+    }
+  })
+</script>
