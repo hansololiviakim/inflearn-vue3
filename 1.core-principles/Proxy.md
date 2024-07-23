@@ -1,7 +1,3 @@
-![vue reactivity](https://v2.vuejs.org/images/data.png)
-
-<br />
-
 # Proxy
 
 ## Proxy란?

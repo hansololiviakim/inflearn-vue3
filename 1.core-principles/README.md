@@ -1,4 +1,8 @@
-# Reactivity
+![vue reactivity](https://v2.vuejs.org/images/data.png)
+
+<br />
+
+# Reactivity with Option API
 
 ## 반응형 상태 설정
 
